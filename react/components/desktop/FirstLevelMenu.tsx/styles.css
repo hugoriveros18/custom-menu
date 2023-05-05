@@ -1,0 +1,51 @@
+.desktopFirtsLevel__generalContainer {
+  width: 100%;
+}
+
+.desktopFirtsLevel__listContainer {
+  display       : flex;
+  flex-direction: column;
+  gap           : 5px;
+  width         : 100%;
+  padding: 0;
+  list-style    : none;
+}
+
+.desktopFirtsLevel__listContainer li {
+  display       : flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  cursor: pointer;
+}
+
+.desktopFirtsLevel__listContainer li:hover {
+  background-color: #f5f5f5;
+}
+
+.desktopFirtsLevel__listContainer li:hover > h4 {
+  color: #ec6608;
+  border-left: solid 3px #ec6608;
+}
+
+.desktopFirtsLevel__listContainer li:hover > img {
+  opacity: 1;
+}
+
+.desktopFirtsLevel__listContainer li h4 {
+  margin: 0;
+  padding-left: 15px;
+  font-size: 18px;
+  border-left: solid 3px #fff;
+  line-height: 1.5;
+}
+
+.desktopFirtsLevel__listContainer li p {
+  margin: 0;
+}
+
+.desktopFirtsLevel__listContainer li img {
+  opacity: 0;
+  width: 17px;
+}
+

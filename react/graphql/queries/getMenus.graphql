@@ -1,0 +1,17 @@
+query getMenu {
+  menus @context(provider: "vtex.mega-menu") {
+    id
+    name
+    slug
+    menu {
+      id
+      name
+      slug
+      menu {
+        id
+        name
+        slug
+      }
+    }
+  }
+}

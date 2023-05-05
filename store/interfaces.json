@@ -1,0 +1,7 @@
+{
+  "custom-menu-desktop": {
+    "component": "MainMenuDesktop",
+    "render": "client",
+    "allowed": "*"
+  }
+}

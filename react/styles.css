@@ -1,0 +1,38 @@
+.desktopMenu__headerContainer {
+  display: flex;
+  width: 100%;
+  padding: 15px 15px 15px 0;
+  background-color: #ec6608;
+}
+
+.desktopMenu__headerLogo {
+  width: 300px;
+}
+
+.drawer {
+  width: auto !important;
+  max-width: none !important;
+  min-width: auto !important;
+  background-color: #fff;
+}
+
+.closeIconButton {
+  border: solid 2px #000;
+  padding: 0;
+  border-radius: 8px;
+  display: flex;
+}
+
+.desktopMenu__contentContainer {
+  width: 100%;
+}
+
+.desktopMenu__contentContainerExample {
+  display: none;
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  right: -100px;
+  top: 0;
+  background-color: #fff;
+}
