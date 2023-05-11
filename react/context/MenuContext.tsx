@@ -1,23 +1,22 @@
 import React, { createContext, useReducer } from 'react'
 import menuReducer from '../reducers/menuReducer';
+import { menuReducerActions } from '../typings/variables';
 
 //ESTADO INICIAL
 export const menuInitialState: MenuState = {
-  firstLevelId: "Guitar & Amps2967",
-  secondLevelId: "Accessories44627",
-  firstLevelIndex: 0,
-  secondLevelIndex: 0,
-  firstLevelItemName: "Guitar & Amps",
-  secondLevelItemName: "Accessories",
-  setFirstLevelMenu: true,
-  setSecondLevelMenu: false,
-  setThirdLevelMenu: false,
-  thirdLevelLength: 0
+  firstLevelOrderId: 0,
+  secondLevelOrderId: 0,
+  firstLevelActive: false,
+  secondLevelActive: false,
+  thirdLevelActive: false,
+  menusData: {
+    menus: []
+  }
 }
 
 
 //CREACION CONTEXTO
-export const MenuContext = createContext( {} as MenuContextProps )
+export const MenuContext = createContext<MenuContextProps>( {} as MenuContextProps )
 
 
 //CONTEXT PROVIDER
@@ -25,58 +24,54 @@ export default function MenuProvider ({ children }: any) {
 
   const [ menuState, dispatch ] = useReducer(menuReducer, menuInitialState)
 
-  const changeItemsFirstLevelId = ( firstLevelId: string ) => {
-    dispatch({ type: 'changeItemsFirstLevelId', payload: firstLevelId })
+  const updateMenuData = (menuData: MenuDataResponse) => {
+    dispatch({type: menuReducerActions.setMenuData, payload: menuData});
   }
 
-  const changeItemsFirstLevelIndex = ( firstLevelIndex: number ) => {
-    dispatch({ type: 'changeItemsFirstLevelIndex', payload: firstLevelIndex })
+  const activateFirstLevelMenu = () => {
+    dispatch({type: menuReducerActions.activateFirstLevelMenu});
   }
 
-  const changeSecondLevelIndex = ( secondLevelIndex: number ) => {
-    dispatch({ type: 'changeSecondLevelIndex', payload: secondLevelIndex })
+  const deactivateFirstLevelMenu = () => {
+    dispatch({type: menuReducerActions.deactivateFirstLevelMenu});
   }
 
-  const changeFirstLevelItemName = ( firstLevelItemName: string ) => {
-    dispatch({ type: 'changeFirstLevelItemName', payload: firstLevelItemName })
-  }
-  const changeSecondLevelItemName = ( secondLevelItemName: string ) => {
-    dispatch({ type: 'changeSecondLevelItemName', payload: secondLevelItemName })
+  const activateSecondLevelMenu = () => {
+    dispatch({type: menuReducerActions.activateSecondLevelMenu});
   }
 
-  const changeItemsSecondLevelId = ( secondLevelId: string ) => {
-    dispatch({ type: 'changeItemsSecondLevelId', payload: secondLevelId })
+  const deactivateSecondLevelMenu = () => {
+    dispatch({type: menuReducerActions.deactivateSecondLevelMenu});
   }
 
-  const changeFirstLevelMenu = ( ) => {
-    dispatch({ type: 'changeFirstLevelMenu'})
+  const activateThirdLevelMenu = () => {
+    dispatch({type: menuReducerActions.activateThirdLevelMenu});
   }
 
-  const changeSecondLevelMenu = () => {
-    dispatch({ type: 'changeSecondLevelMenu'})
+  const deactivateThirdLevelMenu = () => {
+    dispatch({type: menuReducerActions.deactivateThirdLevelMenu});
   }
 
-  const changeThirdLevelMenu = () => {
-    dispatch({ type: 'changeThirdLevelMenu'})
+  const updateFirstLevelMenuOrderId = (firstLevelMenuOrderId: number) => {
+    dispatch({type: menuReducerActions.updateFirstLevelMenuOrderId, payload: firstLevelMenuOrderId});
   }
 
-  const changeThirdLevelLength = ( thirdLevelLength: number ) => {
-    dispatch({ type: 'changeThirdLevelLength', payload: thirdLevelLength })
+  const updateSecondLevelMenuOrderId = (secondLevelMenuOrderId: number) => {
+    dispatch({type: menuReducerActions.updateSecondLevelMenuOrderId, payload: secondLevelMenuOrderId});
   }
 
   return (
     <MenuContext.Provider value={{
       menuState,
-      changeItemsFirstLevelId,
-      changeItemsSecondLevelId,
-      changeItemsFirstLevelIndex,
-      changeSecondLevelIndex,
-      changeFirstLevelItemName,
-      changeSecondLevelItemName,
-      changeFirstLevelMenu,
-      changeSecondLevelMenu,
-      changeThirdLevelMenu,
-      changeThirdLevelLength
+      updateMenuData,
+      activateFirstLevelMenu,
+      deactivateFirstLevelMenu,
+      activateSecondLevelMenu,
+      deactivateSecondLevelMenu,
+      updateFirstLevelMenuOrderId,
+      updateSecondLevelMenuOrderId,
+      activateThirdLevelMenu,
+      deactivateThirdLevelMenu
     }}>
       {children}
     </MenuContext.Provider>

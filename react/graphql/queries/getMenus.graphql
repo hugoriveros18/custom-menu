@@ -3,14 +3,17 @@ query getMenu {
     id
     name
     slug
+    order
     menu {
       id
       name
       slug
+      order
       menu {
         id
         name
         slug
+        order
       }
     }
   }

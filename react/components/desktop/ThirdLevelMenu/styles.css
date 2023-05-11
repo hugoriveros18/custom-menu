@@ -1,0 +1,26 @@
+.desktopThirdLevel__listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0 0 3px;
+  padding: 0 0 0 7px;
+  list-style: none;
+}
+
+.desktopThirdLevel__listElement {
+  cursor: pointer;
+}
+
+.desktopThirdLevel__listElement:hover > .desktopThirdLevel__listLink {
+  color: #ec6608;
+}
+
+.desktopThirdLevel__listLink {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+

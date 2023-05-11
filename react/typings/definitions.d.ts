@@ -1,42 +1,34 @@
-type MenuAction =
-  |{ type: 'changeItemsFirstLevelId', payload: string }
-  | { type: 'changeItemsSecondLevelId', payload: string }
-  | { type: 'changeItemsFirstLevelIndex', payload: number }
-  | { type: 'changeSecondLevelIndex', payload: number }
-  | { type: 'changeFirstLevelItemName', payload: string }
-  | { type: 'changeSecondLevelItemName', payload: string }
-  | { type: 'changeFirstLevelMenu' }
-  | { type: 'changeSecondLevelMenu' }
-  | { type: 'changeThirdLevelMenu' }
-  | { type: 'changeThirdLevelLength', payload: number }
+type MenuAction = {
+  type: string
+  payload?: any
+}
 
 
 interface MenuState {
-  firstLevelId?: string
-  secondLevelId?: string
-  firstLevelIndex: number
-  secondLevelIndex: number
-  firstLevelItemName: string
-  secondLevelItemName: string
-  setFirstLevelMenu: boolean
-  setSecondLevelMenu: boolean
-  setThirdLevelMenu: boolean
-  thirdLevelLength: number
+  firstLevelOrderId: number
+  secondLevelOrderId: number
+  firstLevelActive: boolean
+  secondLevelActive: boolean
+  thirdLevelActive: boolean
+  menusData: MenuDataResponse
 }
 
 
 interface MenuContextProps {
-  menuState: MenuState;
-  changeItemsFirstLevelId: (firstLevelId: string) => void
-  changeItemsSecondLevelId: (secondLevelId: string) => void
-  changeItemsFirstLevelIndex: (firstLevelIndex: number) => void
-  changeSecondLevelIndex: (secondLevelIndex: number) => void
-  changeFirstLevelItemName: (firstLevelItemName: string) => void
-  changeSecondLevelItemName: (firstLevelItemName: string) => void
-  changeFirstLevelMenu: () => void
-  changeSecondLevelMenu: () => void
-  changeThirdLevelMenu: () => void
-  changeThirdLevelLength: (thirdLevelLength: number) => void
+  menuState: MenuState
+  updateMenuData: (menuData: MenuDataResponse) => void
+  activateFirstLevelMenu: () => void
+  deactivateFirstLevelMenu: () => void
+  activateSecondLevelMenu: () => void
+  deactivateSecondLevelMenu: () => void
+  activateThirdLevelMenu: () => void
+  deactivateThirdLevelMenu: () => void
+  updateFirstLevelMenuOrderId: (firstLevelMenuOrderId: number) => void
+  updateSecondLevelMenuOrderId: (secondLevelMenuOrderId: number) => void
+}
+
+type ThirdLevelMenuProps = {
+  menu: MenuThirdLevelResponse[] | null
 }
 
 type MenuThirdLevelResponse = {
@@ -44,6 +36,7 @@ type MenuThirdLevelResponse = {
   name: string
   slug: string
   __typename: string
+  order: number
 }
 
 type MenuSecondLevelResponse = {
@@ -52,6 +45,7 @@ type MenuSecondLevelResponse = {
   slug: string
   menu: MenuThirdLevelResponse[] | null
   __typename: string
+  order: number
 
 }
 
@@ -61,12 +55,70 @@ type MenuFirstLevelResponse = {
   slug: string
   menu: MenuSecondLevelResponse[]
   __typename: string
+  order: number
 }
 
 type MenuDataResponse = {
   menus: MenuFirstLevelResponse[]
 }
 
-interface LevelMenu {
-  menuData: MenuDataResponse
+type CategoryMenu = {
+  id: string
+  name: string
+  __typename: string
+}
+
+type CategoriesDataResponse = {
+  menus: CategoryMenu[]
+}
+
+type CategoryCardProps = {
+  categoryData: CategoryMenu
+  categoryInfo: CategoryInfo[] | null
+  setRefetchData: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+type CategoryInfo = {
+  id: string,
+  bannerDesktop: string
+  fechaFinal: string
+  fechaInicio: string
+  iconoCategoria: string
+  idCategoria: string
+  slug: string
+  nombreCategoria: string
+}
+
+type CategoriesInfo = {
+  categories: CategoryInfo[]
+}
+
+type CategoryCardRegistro = {
+  isModalOpen: boolean
+  nombreCategoria: string
+  idCategoria: string
+  iconoCategoria: string
+  iconoCategoriaError: string
+  bannerDesktop: string
+  bannerDesktopError: string
+  slug: string
+  slugError: string
+  fechaInicio: string
+  fechaInicioError: string
+  fechaFinal: string
+  fechaFinalError: string
+  loadingFetch: boolean
+  fetchSuccesfull: boolean
+  fetchError: boolean
+}
+
+type CategoryCardRegistroProps = {
+  categoryName: string
+  categoryId: string
+  setRefetchData: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+type CategoryCardEditionProps = {
+  boxInformation: CategoryInfo
+  setRefetchData: React.Dispatch<React.SetStateAction<boolean>>
 }

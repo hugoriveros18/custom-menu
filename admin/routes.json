@@ -1,0 +1,6 @@
+{
+  "admin.app.mega-menu-custom": {
+    "component": "MenuConfig",
+    "path": "/admin/app/menu-custom"
+  }
+}

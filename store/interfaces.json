@@ -1,6 +1,11 @@
 {
   "custom-menu-desktop": {
-    "component": "MainMenuDesktop",
+    "component": "MenuDesktop",
+    "render": "client",
+    "allowed": "*"
+  },
+  "custom-menu-mobile": {
+    "component": "MenuMobile",
     "render": "client",
     "allowed": "*"
   }

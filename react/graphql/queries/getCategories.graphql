@@ -1,0 +1,6 @@
+query getCategories {
+  menus @context(provider: "vtex.mega-menu") {
+    id
+    name
+  }
+}

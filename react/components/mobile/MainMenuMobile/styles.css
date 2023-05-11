@@ -1,0 +1,148 @@
+.mobileMenu__trigger {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  padding        : 12px;
+}
+
+.mobileMenu__trigger img {
+  width: 30px;
+}
+
+.mobileMenu__trigger p {
+  margin     : 0;
+  font-size  : 12px;
+  font-weight: 600;
+  color      : #fff;
+}
+
+.mobileMenu__headerContainer {
+  display           : flex;
+  width             : 100%;
+  height            : 67px;
+  padding           : 15px 15px 15px 0;
+  background-color  : #ec6608;
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow   : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow        : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.mobileMenu__headerContainerActive {
+  margin-right: 3px;
+}
+
+.mobileMenu__headerLogo {
+  width: 300px;
+}
+
+.drawer {
+  width           : auto !important;
+  max-width       : none !important;
+  min-width       : auto !important;
+  background-color: #fff;
+}
+
+.openIconContainer {
+  padding: 0;
+}
+
+.drawerHeader {
+  position        : sticky;
+  top             : 0;
+  background-color: #ec6608;
+}
+
+/* .drawerContent {
+  overflow-y: hidden;
+} */
+
+.drawerContent::-webkit-scrollbar {
+  width           : 5px;
+  background-color: #eee;
+}
+
+.drawerContent::-webkit-scrollbar-thumb {
+  width           : 5px;
+  background-color: #000;
+}
+
+.closeIconButton {
+  border       : solid 2px #000;
+  padding      : 0;
+  border-radius: 8px;
+  display      : flex;
+}
+
+.mobileMenu__contentContainer {
+  width: 100%;
+}
+
+.mobileMenu__categoriesContainer {
+  width    : 100%;
+  max-width: 350px;
+  overflow : hidden;
+}
+
+.mobileMenu__categoriesContainerInternal {
+  display   : flex;
+  width     : 100%;
+  transition: all 500ms ease;
+}
+
+.mobileMenu__traslateSecondLevel {
+  transform: translateX(-100%);
+}
+
+.mobileMenu__footerContainer {
+  position        : sticky;
+  bottom          : 0;
+  width           : 100%;
+  padding         : 0 15px;
+  background-color: #fff;
+}
+
+.mobileMenu__footerList {
+  display       : flex;
+  flex-direction: column;
+  gap           : 10px;
+  margin        : 0;
+  padding       : 15px 0;
+  list-style    : none;
+  border-top    : solid 3px #cacbcc;
+}
+
+.mobileMenu__footerList li {
+  padding-left: 18px;
+}
+
+.mobileMenu__footerLink {
+  display        : flex;
+  align-items    : center;
+  gap            : 10px;
+  width          : 100%;
+  cursor         : pointer;
+  text-decoration: none;
+}
+
+.mobileMenu__footerLink:hover>h4 {
+  color: #ec6608;
+}
+
+.mobileMenu__footerLink h4 {
+  margin     : 0;
+  font-size  : 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  color      : #000;
+}
+
+.mobileMenu__footerLink img {
+  width : 28px;
+  height: 28px;
+}
+
+.mobileMenu__footerLink .desktopMenu__footerLinkOrders {
+  width : 28px;
+  height: 22px;
+}

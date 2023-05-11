@@ -1,4 +1,6 @@
 {
   "admin/test": "test",
-  "store/test": "test"
+  "store/test": "test",
+  "mega-menu-custom.navigation.label": "Menu Custom Config",
+  "mega-menu-custom.navigation.search.kws": "menu, custom, mega, configuracion"
 }

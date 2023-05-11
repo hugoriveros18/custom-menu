@@ -1,0 +1,25 @@
+.cardRegistration__formContainer {
+  display       : flex;
+  flex-direction: column;
+  gap           : 15px;
+  margin-bottom : 30px;
+}
+
+.cardRegistration__dateContainer {
+  display: flex;
+  gap    : 20px;
+}
+
+.cardRegistration__dateContainer label {
+  display       : flex;
+  flex-direction: column;
+  gap           : 7px;
+  width         : 100%;
+  font-size     : .875rem;
+  color         : #3f3f40;
+}
+
+.cardRegistration__dateContainer label p {
+  margin: 0;
+  color : #ff4c4c;
+}

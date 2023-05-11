@@ -49,3 +49,18 @@
   width: 17px;
 }
 
+.desktopFirtsLevel__categorieActive {
+  background-color: #f5f5f5 !important;
+}
+
+.desktopFirtsLevel__categorieActive h4{
+  color: #ec6608 !important;
+  border-left: solid 3px #ec6608 !important;
+}
+
+.desktopFirtsLevel__categorieActive img{
+  opacity: 1 !important;
+}
+
+
+

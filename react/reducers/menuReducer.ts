@@ -1,71 +1,67 @@
+import { menuReducerActions } from "../typings/variables"
+
 export default function menuReducer ( state: MenuState, action: MenuAction ): MenuState {
 
   switch ( action.type ) {
-    case 'changeItemsFirstLevelId':
+    case menuReducerActions.setMenuData:
       return {
         ...state,
-        firstLevelId: action.payload
+        menusData: action.payload
       }
 
-    case 'changeItemsSecondLevelId':
+    case menuReducerActions.activateFirstLevelMenu:
       return {
         ...state,
-        secondLevelId: action.payload
+        firstLevelActive: true
+
       }
 
-    case 'changeItemsFirstLevelIndex':
+    case menuReducerActions.deactivateFirstLevelMenu:
       return {
         ...state,
-        firstLevelIndex: action.payload
+        firstLevelActive: false
+
       }
 
-    case 'changeSecondLevelIndex':
+    case menuReducerActions.activateSecondLevelMenu:
       return {
         ...state,
-        secondLevelIndex: action.payload
+        secondLevelActive: true
+
       }
 
-    case 'changeFirstLevelItemName':
+    case menuReducerActions.deactivateSecondLevelMenu:
       return {
         ...state,
-        firstLevelItemName: action.payload
+        secondLevelActive: false
+
       }
 
-    case 'changeSecondLevelItemName':
+    case menuReducerActions.activateThirdLevelMenu:
       return {
         ...state,
-        secondLevelItemName: action.payload
+        thirdLevelActive: true
+
       }
 
-    case 'changeFirstLevelMenu':
+    case menuReducerActions.deactivateThirdLevelMenu:
       return {
-          ...state,
-          setFirstLevelMenu: true,
-          setSecondLevelMenu: false,
-          setThirdLevelMenu: false
+        ...state,
+        thirdLevelActive: false
+
       }
 
-    case 'changeSecondLevelMenu':
+    case menuReducerActions.updateFirstLevelMenuOrderId:
       return {
-          ...state,
-          setFirstLevelMenu: false,
-          setSecondLevelMenu: true,
-          setThirdLevelMenu: false
+        ...state,
+        firstLevelOrderId: action.payload
       }
 
-    case 'changeThirdLevelMenu':
+    case menuReducerActions.updateSecondLevelMenuOrderId:
       return {
-          ...state,
-          setFirstLevelMenu: false,
-          setSecondLevelMenu: false,
-          setThirdLevelMenu: true
+        ...state,
+        secondLevelOrderId: action.payload
       }
-
-    case 'changeThirdLevelLength':
-    return {
-      ...state,
-      thirdLevelLength: action.payload
-    }
 
     default:
       return state

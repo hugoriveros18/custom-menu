@@ -1,0 +1,133 @@
+.desktopMenu__trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.desktopMenu__trigger img {
+  width: 30px;
+}
+
+.desktopMenu__trigger p {
+  margin: 0;
+}
+
+.desktopMenu__headerContainer {
+  display           : flex;
+  width             : 100%;
+  height            : 67px;
+  padding           : 15px 15px 15px 0;
+  background-color  : #ec6608;
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow   : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  box-shadow        : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+.desktopMenu__headerContainerActive {
+  margin-right: 3px;
+}
+
+.desktopMenu__headerLogo {
+  width: 300px;
+}
+
+.drawer {
+  width           : auto !important;
+  max-width       : none !important;
+  min-width       : auto !important;
+  background-color: #fff;
+}
+
+.openIconContainer {
+  padding: 0;
+}
+
+.drawerHeader {
+  position        : sticky;
+  top             : 0;
+  background-color: #ec6608;
+}
+
+.drawerContent::-webkit-scrollbar {
+  width           : 5px;
+  background-color: #eee;
+}
+
+.drawerContent::-webkit-scrollbar-thumb {
+  width           : 5px;
+  background-color: #000;
+}
+
+.closeIconButton {
+  border       : solid 2px #000;
+  padding      : 0;
+  border-radius: 8px;
+  display      : flex;
+}
+
+.desktopMenu__contentContainer {
+  width: 100%;
+}
+
+.desktopMenu__contentContainerExample {
+  display         : none;
+  width           : 100px;
+  height          : 100%;
+  position        : absolute;
+  right           : -100px;
+  top             : 0;
+  background-color: #fff;
+}
+
+.desktopMenu__footerContainer {
+  position        : sticky;
+  bottom          : 0;
+  width           : 100%;
+  padding         : 0 30px;
+  background-color: #fff;
+}
+
+.desktopMenu__footerList {
+  display       : flex;
+  flex-direction: column;
+  gap           : 10px;
+  margin        : 0;
+  padding       : 15px 0;
+  list-style    : none;
+  border-top    : solid 3px #cacbcc;
+}
+
+.desktopMenu__footerList li {
+  padding-left: 18px;
+}
+
+.desktopMenu__footerLink {
+  display        : flex;
+  align-items    : center;
+  gap            : 10px;
+  width          : 100%;
+  cursor         : pointer;
+  text-decoration: none;
+}
+
+.desktopMenu__footerLink:hover > h4 {
+  color: #ec6608;
+}
+
+.desktopMenu__footerLink h4 {
+  margin     : 0;
+  font-size  : 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color      : #000;
+}
+
+.desktopMenu__footerLink img {
+  width : 28px;
+  height: 28px;
+}
+
+.desktopMenu__footerLink .desktopMenu__footerLinkOrders {
+  width : 28px;
+  height: 22px;
+}
