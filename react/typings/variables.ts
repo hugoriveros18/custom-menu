@@ -1,5 +1,7 @@
 export const menuReducerActions = {
   setMenuData: 'setMenuData',
+  setCategoriesInfo: 'setCategoriesInfo',
+  updateFirstLevelId: 'updateFirstLevelId',
   activateFirstLevelMenu: 'activateFirstLevelMenu',
   deactivateFirstLevelMenu: 'deactivateFirstLevelMenu',
   activateSecondLevelMenu: 'activateSecondLevelMenu',

@@ -1,14 +1,11 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { useCssHandles } from 'vtex.css-handles';
 import { Drawer, DrawerHeader, DrawerCloseButton } from 'vtex.store-drawer';
 import { Link } from "vtex.render-runtime";
-import { useQuery } from 'react-apollo';
-import getMenu from '../../../graphql/queries/getMenus.graphql';
-// import { responseDataExample } from '../../../dataResponseExample';
 import FirstLevelMenu from '../FirstLevelMenu/index';
 import SecondLevelMenu from '../SecondLevelMenu/index';
-import { MenuContext } from '../../../context/MenuContext';
 import './styles.css';
+import useRequestMenuDataDesktop from '../../../hooks/useRequestMenuDataDesktop';
 
 
 const CSS_HANDLES = [
@@ -28,18 +25,8 @@ export default function MainMenuDesktop() {
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 
-  //STATE CONTEXT
-  const { menuState, updateMenuData } = useContext(MenuContext);
-
-  //DATA QUERY
-  const { data } = useQuery(getMenu);
-
-  //EFFECTS
-  useEffect(() => {
-    if(data) {
-      updateMenuData(data);
-    }
-  }, [data])
+  //MENU STATE MANAGE
+  const { menuState, deactivateSecondLevelMenu } = useRequestMenuDataDesktop();
 
   //JSX
   return (
@@ -52,6 +39,7 @@ export default function MainMenuDesktop() {
                 ${handles.desktopMenu__headerContainer}
                 ${(menuState.firstLevelActive || menuState.secondLevelActive) ? handles.desktopMenu__headerContainerActive : undefined}
               `}
+              onMouseEnter={ deactivateSecondLevelMenu }
             >
               <img
                 className={handles.desktopMenu__headerLogo}
@@ -75,7 +63,10 @@ export default function MainMenuDesktop() {
 
           <FirstLevelMenu />
 
-          <footer className={handles.desktopMenu__footerContainer}>
+          <footer
+            className={handles.desktopMenu__footerContainer}
+            onMouseEnter={ deactivateSecondLevelMenu }
+          >
             <ul className={handles.desktopMenu__footerList}>
               <li>
                 <Link

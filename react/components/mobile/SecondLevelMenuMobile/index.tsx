@@ -27,7 +27,13 @@ export default function SecondLevelMenuMobile() {
   const handles = useCssHandles(CSS_HANDLES);
 
   //STATE CONTEXT
-  const { menuState, deactivateSecondLevelMenu, activateFirstLevelMenu, activateThirdLevelMenu, updateSecondLevelMenuOrderId } = useContext(MenuContext);
+  const {
+    menuState,
+    deactivateSecondLevelMenu,
+    activateFirstLevelMenu,
+    activateThirdLevelMenu,
+    updateSecondLevelMenuOrderId
+  } = useContext(MenuContext);
 
   //JSX
   return(
@@ -48,7 +54,7 @@ export default function SecondLevelMenuMobile() {
         </div>
         <div className={handles.mobileSecondLevel__headerLinkContainer}>
           <div className={handles.mobileSecondLevel__headerTitle}>
-            <img src="https://panamericana.vteximg.com.br/arquivos/menu-custom-tecnologia-logo-desktop.png"/>
+            <img src={menuState.menusData.menus[menuState.firstLevelOrderId]?.categoryInfo?.iconoCategoria}/>
             <h4>{menuState.menusData.menus[menuState.firstLevelOrderId].name}</h4>
           </div>
           <Link

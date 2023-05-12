@@ -5,18 +5,22 @@ type MenuAction = {
 
 
 interface MenuState {
+  firstLevelId: string
   firstLevelOrderId: number
   secondLevelOrderId: number
   firstLevelActive: boolean
   secondLevelActive: boolean
   thirdLevelActive: boolean
   menusData: MenuDataResponse
+  categoriesInfo: CategoryInfo[]
 }
 
 
 interface MenuContextProps {
   menuState: MenuState
   updateMenuData: (menuData: MenuDataResponse) => void
+  updateCategoriesInfo: (categoriesInfo: CategoryInfo[]) => void
+  updateFirstLevelId: (categoryId: string) => void
   activateFirstLevelMenu: () => void
   deactivateFirstLevelMenu: () => void
   activateSecondLevelMenu: () => void
@@ -56,6 +60,7 @@ type MenuFirstLevelResponse = {
   menu: MenuSecondLevelResponse[]
   __typename: string
   order: number
+  categoryInfo?: CategoryInfo
 }
 
 type MenuDataResponse = {
@@ -79,14 +84,14 @@ type CategoryCardProps = {
 }
 
 type CategoryInfo = {
-  id: string,
+  id?: string,
   bannerDesktop: string
   fechaFinal: string
   fechaInicio: string
   iconoCategoria: string
   idCategoria: string
   slug: string
-  nombreCategoria: string
+  nombreCategoria?: string
 }
 
 type CategoriesInfo = {
@@ -95,7 +100,7 @@ type CategoriesInfo = {
 
 type CategoryCardRegistro = {
   isModalOpen: boolean
-  nombreCategoria: string
+  nombreCategoria: string | undefined
   idCategoria: string
   iconoCategoria: string
   iconoCategoriaError: string

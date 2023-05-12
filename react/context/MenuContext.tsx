@@ -4,6 +4,7 @@ import { menuReducerActions } from '../typings/variables';
 
 //ESTADO INICIAL
 export const menuInitialState: MenuState = {
+  firstLevelId: '',
   firstLevelOrderId: 0,
   secondLevelOrderId: 0,
   firstLevelActive: false,
@@ -11,7 +12,8 @@ export const menuInitialState: MenuState = {
   thirdLevelActive: false,
   menusData: {
     menus: []
-  }
+  },
+  categoriesInfo: []
 }
 
 
@@ -26,6 +28,14 @@ export default function MenuProvider ({ children }: any) {
 
   const updateMenuData = (menuData: MenuDataResponse) => {
     dispatch({type: menuReducerActions.setMenuData, payload: menuData});
+  }
+
+  const updateCategoriesInfo = (categoriesInfo: CategoryInfo[]) => {
+    dispatch({type: menuReducerActions.setCategoriesInfo, payload: categoriesInfo})
+  }
+
+  const updateFirstLevelId = (categoryId: string) => {
+    dispatch({type: menuReducerActions.updateFirstLevelId, payload: categoryId});
   }
 
   const activateFirstLevelMenu = () => {
@@ -64,6 +74,8 @@ export default function MenuProvider ({ children }: any) {
     <MenuContext.Provider value={{
       menuState,
       updateMenuData,
+      updateCategoriesInfo,
+      updateFirstLevelId,
       activateFirstLevelMenu,
       deactivateFirstLevelMenu,
       activateSecondLevelMenu,

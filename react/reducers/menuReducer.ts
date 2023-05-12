@@ -9,6 +9,18 @@ export default function menuReducer ( state: MenuState, action: MenuAction ): Me
         menusData: action.payload
       }
 
+    case menuReducerActions.setCategoriesInfo:
+      return {
+        ...state,
+        categoriesInfo: action.payload
+      }
+
+    case menuReducerActions.updateFirstLevelId:
+      return {
+        ...state,
+        firstLevelId: action.payload
+      }
+
     case menuReducerActions.activateFirstLevelMenu:
       return {
         ...state,

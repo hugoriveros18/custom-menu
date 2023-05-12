@@ -48,7 +48,8 @@
   justify-content: space-between;
   align-items    : center;
   gap            : 10px;
-  padding        : 15px 10px;
+  min-height     : 75px;
+  padding        : 0 10px;
   background     : rgb(236, 102, 8);
   background     : linear-gradient(90deg, rgba(236, 102, 8, 1) 0%, rgba(236, 138, 8, 1) 44%);
 }
@@ -56,16 +57,20 @@
 .mobileSecondLevel__headerTitle {
   display    : flex;
   align-items: center;
-  gap        : 10px;
+  gap        : 2px;
 }
 
 .mobileSecondLevel__headerTitle h4 {
   margin        : 0;
-  font-size     : 20px;
+  font-size     : 18px;
   font-weight   : 600;
   text-transform: uppercase;
   color         : #fff;
   max-width     : 125px;
+}
+
+.mobileSecondLevel__headerTitle img {
+  max-width: 75px;
 }
 
 .mobileSecondLevel__headerLink {
@@ -116,11 +121,11 @@
 }
 
 .mobileSecondLevel__categorieContainer h4 {
-  margin   : 0;
-  padding  : 8px 0;
-  font-size: 20px;
+  margin     : 0;
+  padding    : 8px 0;
+  font-size  : 20px;
   font-weight: 400;
-  color    : #000;
+  color      : #000;
 }
 
 .mobileSecondLevel__categorieContainer img {

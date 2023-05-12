@@ -15,15 +15,19 @@ export default function FirstLevelMenu() {
   const handles = useCssHandles(CSS_HANDLES);
 
   //STATE CONTEXT
-  const { menuState, activateFirstLevelMenu, deactivateFirstLevelMenu ,updateFirstLevelMenuOrderId } = useContext(MenuContext);
+  const {
+    menuState,
+    activateSecondLevelMenu,
+    updateFirstLevelMenuOrderId,
+    updateFirstLevelId
+  } = useContext(MenuContext);
 
   //JSX
   return (
     <div className={handles.desktopFirtsLevel__generalContainer}>
       <ul
        className={handles.desktopFirtsLevel__listContainer}
-       onMouseEnter={ activateFirstLevelMenu }
-       onMouseLeave={ deactivateFirstLevelMenu }
+       onMouseEnter={ activateSecondLevelMenu }
       >
         {
           menuState.menusData.menus.map((menu) => {
@@ -32,6 +36,7 @@ export default function FirstLevelMenu() {
                 key={menu.id}
                 onMouseEnter={() => {
                   updateFirstLevelMenuOrderId(menu.order - 1)
+                  updateFirstLevelId(menu.id);
                 }}
                 className={(menuState.firstLevelOrderId === (menu.order - 1) && (menuState.firstLevelActive || menuState.secondLevelActive)) && handles.desktopFirtsLevel__categorieActive}
               >

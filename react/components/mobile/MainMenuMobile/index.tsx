@@ -1,15 +1,12 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { useCssHandles } from 'vtex.css-handles';
 import { Drawer, DrawerHeader, DrawerCloseButton } from 'vtex.store-drawer';
 import { Link } from "vtex.render-runtime";
-import { useQuery } from 'react-apollo';
-import getMenu from '../../../graphql/queries/getMenus.graphql';
-// import { responseDataExample } from '../../../dataResponseExample';
-import { MenuContext } from '../../../context/MenuContext';
 import './styles.css';
 import FirstLevelMenuMobile from '../FirstLevelMenuMobile';
 import SecondLevelMenuMobile from '../SecondLevelMenuMobile';
 import ThirdLevelMenuMobile from '../ThirdLevelMenuMobile';
+import useRequestMenuDataMobile from '../../../hooks/useRequestMenuDataMobile';
 
 
 const CSS_HANDLES = [
@@ -32,32 +29,8 @@ export default function MainMenuMobile() {
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 
-  //STATE CONTEXT
-  const {
-    menuState,
-    updateMenuData,
-    activateFirstLevelMenu,
-    deactivateSecondLevelMenu,
-    deactivateThirdLevelMenu
-  } = useContext(MenuContext);
-
-  //DATA QUERY
-  const { data } = useQuery(getMenu);
-
-  //EFFECTS
-  useEffect(() => {
-    if(data) {
-      updateMenuData(data);
-      activateFirstLevelMenu();
-    }
-  }, [data])
-
-  //METHODS
-  const resetValues = () => {
-    deactivateSecondLevelMenu();
-    deactivateThirdLevelMenu();
-    activateFirstLevelMenu();
-  }
+  //MENU STATE MANAGE
+  const { menuState, resetValues } = useRequestMenuDataMobile();
 
   //JSX
   return (

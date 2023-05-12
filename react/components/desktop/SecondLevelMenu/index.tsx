@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { useCssHandles } from 'vtex.css-handles';
 import { Link } from "vtex.render-runtime";
 import { MenuContext } from "../../../context/MenuContext";
@@ -25,7 +25,29 @@ export default function SecondLevelMenu() {
   const handles = useCssHandles(CSS_HANDLES);
 
   //STATE CONTEXT
-  const { menuState, activateSecondLevelMenu, deactivateSecondLevelMenu } = useContext(MenuContext);
+  const {
+    menuState,
+    activateSecondLevelMenu,
+    deactivateSecondLevelMenu
+  } = useContext(MenuContext);
+
+  //MEMO
+  const iconBannerValidation = useMemo(() => {
+    const fechaInicio = menuState.menusData.menus[menuState.firstLevelOrderId].categoryInfo?.fechaInicio;
+    const fechaFinal = menuState.menusData.menus[menuState.firstLevelOrderId].categoryInfo?.fechaFinal;
+
+    if(fechaInicio && fechaFinal) {
+      const initialDate = new Date(fechaInicio.replace('DF','T'));
+      const now = new Date();
+      const finalDate = new Date(fechaFinal.replace('DF','T'));
+
+      if(now.getTime() > initialDate.getTime() && now.getTime() < finalDate.getTime()) {
+        return menuState.menusData.menus[menuState.firstLevelOrderId].categoryInfo;
+      }
+    }
+
+    return undefined;
+  }, [menuState.firstLevelId])
 
   //JSX
   return(
@@ -33,14 +55,13 @@ export default function SecondLevelMenu() {
       className={`
           ${handles.desktopSecondLevel__generalContainer}
           ${menuState.secondLevelActive && handles.desktopSecondLevel__containerActive}
-          ${menuState.firstLevelActive && handles.desktopSecondLevel__containerActive}
       `}
       onMouseEnter={ activateSecondLevelMenu }
       onMouseLeave={ deactivateSecondLevelMenu }
     >
 
       <header className={handles.desktopSecondLevel__headerContainer}>
-        <img src="https://panamericana.vteximg.com.br/arquivos/menu-custom-tecnologia-logo-desktop.png"/>
+        <img src={menuState.menusData.menus[menuState.firstLevelOrderId]?.categoryInfo?.iconoCategoria}/>
         <h4>{menuState.menusData.menus[menuState.firstLevelOrderId].name}</h4>
         <Link
           to={`/${menuState.menusData.menus[menuState.firstLevelOrderId].slug}`}
@@ -74,14 +95,17 @@ export default function SecondLevelMenu() {
           })
         }
       </div>
-      <footer className={handles.desktopSecondLevel__footerContainer}>
-        <Link
-          to={'/'}
-          className={handles.desktopSecondLevel__footerLink}
-        >
-          <img src="https://panamericana.vtexassets.com/assets/vtex.file-manager-graphql/images/a1123687-25df-4548-ada4-b7670aababcf___cb68c9ca57e1d1eb19f7925954f825db.png"/>
-        </Link>
-      </footer>
+      {
+        iconBannerValidation &&
+        <footer className={handles.desktopSecondLevel__footerContainer}>
+          <Link
+            to={iconBannerValidation.slug}
+            className={handles.desktopSecondLevel__footerLink}
+          >
+            <img src={iconBannerValidation.bannerDesktop}/>
+          </Link>
+        </footer>
+      }
 
     </div>
   )
