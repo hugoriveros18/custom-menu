@@ -33,8 +33,8 @@ export default function SecondLevelMenu() {
 
   //MEMO
   const iconBannerValidation = useMemo(() => {
-    const fechaInicio = menuState.menusData.menus[menuState.firstLevelOrderId].categoryInfo?.fechaInicio;
-    const fechaFinal = menuState.menusData.menus[menuState.firstLevelOrderId].categoryInfo?.fechaFinal;
+    const fechaInicio = menuState?.menusData?.menus[menuState.firstLevelOrderId]?.categoryInfo?.fechaInicio;
+    const fechaFinal = menuState?.menusData?.menus[menuState.firstLevelOrderId]?.categoryInfo?.fechaFinal;
 
     if(fechaInicio && fechaFinal) {
       const initialDate = new Date(fechaInicio.replace('DF','T'));
@@ -62,9 +62,9 @@ export default function SecondLevelMenu() {
 
       <header className={handles.desktopSecondLevel__headerContainer}>
         <img src={menuState.menusData.menus[menuState.firstLevelOrderId]?.categoryInfo?.iconoCategoria}/>
-        <h4>{menuState.menusData.menus[menuState.firstLevelOrderId].name}</h4>
+        <h4>{menuState.menusData.menus[menuState.firstLevelOrderId]?.name}</h4>
         <Link
-          to={`/${menuState.menusData.menus[menuState.firstLevelOrderId].slug}`}
+          to={`/${menuState.menusData.menus[menuState.firstLevelOrderId]?.slug}`}
           className={handles.desktopSecondLevel__headerLink}
         >
           <p>Ver todo</p>
@@ -77,17 +77,17 @@ export default function SecondLevelMenu() {
           menuState.menusData.menus[menuState.firstLevelOrderId].menu?.map((menu) => {
             return(
               <div
-                key={menu.id}
+                key={menu?.id}
                 className={handles.desktopSecondLevel__categorieContainer}
               >
-                <h4>{menu.name}</h4>
-                <ThirdLevelMenu menu={menu.menu}/>
+                <h4>{menu?.name}</h4>
+                <ThirdLevelMenu menu={menu?.menu}/>
                 <div className={handles.desktopSecondLevel__categorieLinkContainer}>
                   <Link
-                    to={`/${menu.slug}`}
+                    to={`/${menu?.slug}`}
                     className={handles.desktopSecondLevel__categorieLink}
                   >
-                    Ver todo {menu.name}
+                    Ver todo {menu?.name}
                   </Link>
                 </div>
               </div>

@@ -48,7 +48,7 @@
   justify-content: space-between;
   align-items    : center;
   gap            : 10px;
-  min-height     : 75px;
+  min-height     : 70px;
   padding        : 0 10px;
   background     : rgb(236, 102, 8);
   background     : linear-gradient(90deg, rgba(236, 102, 8, 1) 0%, rgba(236, 138, 8, 1) 44%);
@@ -62,7 +62,7 @@
 
 .mobileSecondLevel__headerTitle h4 {
   margin        : 0;
-  font-size     : 18px;
+  font-size     : 16px;
   font-weight   : 600;
   text-transform: uppercase;
   color         : #fff;
@@ -70,7 +70,7 @@
 }
 
 .mobileSecondLevel__headerTitle img {
-  max-width: 75px;
+  max-width: 65px;
 }
 
 .mobileSecondLevel__headerLink {
@@ -90,7 +90,7 @@
 
 .mobileSecondLevel__headerLink p {
   margin     : 0;
-  font-size  : 16px;
+  font-size  : 14px;
   font-weight: 800;
   color      : #ec6608;
 }

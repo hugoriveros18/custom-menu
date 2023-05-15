@@ -103,7 +103,7 @@ export default function MainMenuDesktop() {
                   className={handles.desktopMenu__footerLink}
                 >
                   <img className={handles.desktopMenu__footerLinkOrders} src='https://panamericana.vteximg.com.br/arquivos/mis-pedidos-menu-custom.png'/>
-                  <h4>Mis Ordenes</h4>
+                  <h4>Mis Pedidos</h4>
                 </Link>
               </li>
             </ul>

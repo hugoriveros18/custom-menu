@@ -33,7 +33,7 @@
 }
 
 .mobileMenu__headerLogo {
-  width: 300px;
+  width: 280px;
 }
 
 .drawer {
@@ -85,7 +85,7 @@
 
 .mobileMenu__categoriesContainer {
   width    : 100%;
-  max-width: 350px;
+  max-width: 320px;
   overflow : hidden;
 }
 
@@ -100,8 +100,6 @@
 }
 
 .mobileMenu__footerContainer {
-  position        : sticky;
-  bottom          : 0;
   width           : 100%;
   padding         : 0 15px;
   background-color: #fff;
