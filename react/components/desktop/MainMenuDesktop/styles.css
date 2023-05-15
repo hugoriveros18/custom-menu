@@ -1,7 +1,7 @@
 .desktopMenu__trigger {
-  display: flex;
+  display    : flex;
   align-items: center;
-  gap: 6px;
+  gap        : 6px;
 }
 
 .desktopMenu__trigger img {
@@ -9,7 +9,9 @@
 }
 
 .desktopMenu__trigger p {
-  margin: 0;
+  margin     : 0;
+  font-weight: 900;
+  color      : #565656;
 }
 
 .desktopMenu__headerContainer {
@@ -18,9 +20,9 @@
   height            : 67px;
   padding           : 15px 15px 15px 0;
   background-color  : #ec6608;
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow   : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  box-shadow        : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow   : 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow        : 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
 .desktopMenu__headerContainerActive {
@@ -48,6 +50,12 @@
   background-color: #ec6608;
 }
 
+.drawerContent {
+  height        : 100%;
+  display       : flex;
+  flex-direction: column;
+}
+
 .drawerContent::-webkit-scrollbar {
   width           : 5px;
   background-color: #eee;
@@ -58,15 +66,27 @@
   background-color: #000;
 }
 
+.desktopMenu__closeButton {
+  display    : flex;
+  align-items: center;
+}
+
 .closeIconButton {
-  border       : solid 2px #000;
-  padding      : 0;
-  border-radius: 8px;
-  display      : flex;
+  width  : 25px;
+  padding: 0;
+  display: flex;
+  border: none;
 }
 
 .desktopMenu__contentContainer {
   width: 100%;
+}
+
+.desktopMenu__contentContainerActive {
+  margin-right      : 3px;
+  -webkit-box-shadow: 0px -4px 3px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow   : 0px -4px 3px 0px rgba(0, 0, 0, 0.15);
+  box-shadow        : 0px -4px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
 .desktopMenu__contentContainerExample {
@@ -94,7 +114,7 @@
   margin        : 0;
   padding       : 15px 0;
   list-style    : none;
-  border-top    : solid 3px #cacbcc;
+  border-top    : solid 1px #cacbcc;
 }
 
 .desktopMenu__footerList li {
@@ -110,7 +130,7 @@
   text-decoration: none;
 }
 
-.desktopMenu__footerLink:hover > h4 {
+.desktopMenu__footerLink:hover>h4 {
   color: #ec6608;
 }
 
@@ -119,7 +139,7 @@
   font-size  : 18px;
   font-weight: 600;
   line-height: 1.5;
-  color      : #000;
+  color      : #565656;
 }
 
 .desktopMenu__footerLink img {

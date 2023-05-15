@@ -10,10 +10,12 @@ import useRequestMenuDataDesktop from '../../../hooks/useRequestMenuDataDesktop'
 
 const CSS_HANDLES = [
   'desktopMenu__trigger',
+  'desktopMenu__closeButton',
   'desktopMenu__headerContainer',
   'desktopMenu__headerContainerActive',
   'desktopMenu__headerLogo',
   'desktopMenu__contentContainer',
+  'desktopMenu__contentContainerActive',
   'desktopMenu__footerContainer',
   'desktopMenu__footerList',
   'desktopMenu__footerLink',
@@ -46,7 +48,7 @@ export default function MainMenuDesktop() {
                 src="https://panamericana.vtexassets.com/assets/vtex.file-manager-graphql/images/a51bbd12-c1bd-4663-96e7-da1be09bbd05___c42d5d021ea10e085384ca783acffc6c.svg"
                 alt="Logo Panamericana"
               />
-              <div>
+              <div className={handles.desktopMenu__closeButton}>
                 <DrawerCloseButton />
               </div>
             </header>
@@ -55,11 +57,11 @@ export default function MainMenuDesktop() {
         customIcon={
           <div className={handles.desktopMenu__trigger}>
             <img src='https://panamericana.vteximg.com.br/arquivos/menu-custom-icon.svg'/>
-            <p>Menú</p>
+            <p>MENÚ</p>
           </div>
         }
       >
-        <div className={handles.desktopMenu__contentContainer}>
+        <div className={`${handles.desktopMenu__contentContainer} ${menuState.secondLevelActive ? handles.desktopMenu__contentContainerActive : undefined}`}>
 
           <FirstLevelMenu />
 

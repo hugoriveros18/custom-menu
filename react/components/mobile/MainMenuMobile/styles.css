@@ -13,7 +13,7 @@
 .mobileMenu__trigger p {
   margin     : 0;
   font-size  : 12px;
-  font-weight: 600;
+  font-weight: 900;
   color      : #fff;
 }
 
@@ -23,9 +23,9 @@
   height            : 67px;
   padding           : 15px 15px 15px 0;
   background-color  : #ec6608;
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow   : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  box-shadow        : 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow   : 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  box-shadow        : 2px 2px 3px 0px rgba(0, 0, 0, 0.25);
 }
 
 .mobileMenu__headerContainerActive {
@@ -67,11 +67,16 @@
   background-color: #000;
 }
 
+.mobileMenu__closeButton {
+  display    : flex;
+  align-items: center;
+}
+
 .closeIconButton {
-  border       : solid 2px #000;
-  padding      : 0;
-  border-radius: 8px;
-  display      : flex;
+  width  : 25px;
+  border : none;
+  padding: 0;
+  display: flex;
 }
 
 .mobileMenu__contentContainer {
@@ -109,7 +114,7 @@
   margin        : 0;
   padding       : 15px 0;
   list-style    : none;
-  border-top    : solid 3px #cacbcc;
+  border-top    : solid 1px #cacbcc;
 }
 
 .mobileMenu__footerList li {
@@ -134,7 +139,7 @@
   font-size  : 20px;
   font-weight: 600;
   line-height: 1.5;
-  color      : #000;
+  color      : #565656;
 }
 
 .mobileMenu__footerLink img {

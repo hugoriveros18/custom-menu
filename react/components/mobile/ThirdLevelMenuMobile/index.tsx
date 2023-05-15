@@ -53,7 +53,7 @@ export default function ThirdLevelMenuMobile() {
             activateSecondLevelMenu();
           }}
         >
-          <img src="https://panamericana.vteximg.com.br/arquivos/left-arrow-menu.svg"/>
+          <img src="https://panamericana.vteximg.com.br/arquivos/left-arrow-update.svg"/>
           <p>Volver al menú anterior</p>
         </div>
         <div className={handles.mobileThirdLevel__headerLinkContainer}>

@@ -23,7 +23,7 @@
   display: block;
   width          : 100%;
   font-size      : 20px;
-  color          : #000;
+  color          : #565656;
   text-decoration: none;
 }
 
@@ -48,7 +48,7 @@
 .mobileThirdLevel__headerBackContainer p {
   font-size  : 20px;
   font-weight: 600;
-  color      : #000;
+  color      : #565656;
   margin     : 0;
 }
 

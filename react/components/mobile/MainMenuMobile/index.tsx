@@ -11,6 +11,7 @@ import useRequestMenuDataMobile from '../../../hooks/useRequestMenuDataMobile';
 
 const CSS_HANDLES = [
   'mobileMenu__trigger',
+  'mobileMenu__closeButton',
   'mobileMenu__headerContainer',
   'mobileMenu__headerContainerActive',
   'mobileMenu__headerLogo',
@@ -48,6 +49,7 @@ export default function MainMenuMobile() {
               />
               <div
                 onClick={resetValues}
+                className={handles.mobileMenu__closeButton}
               >
                 <DrawerCloseButton />
               </div>
@@ -57,7 +59,7 @@ export default function MainMenuMobile() {
         customIcon={
           <div className={handles.mobileMenu__trigger}>
             <img src='https://panamericana.vteximg.com.br/arquivos/menu-custom-icon-mobile.svg'/>
-            <p>Menú</p>
+            <p>MENÚ</p>
           </div>
         }
       >

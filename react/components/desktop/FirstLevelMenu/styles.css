@@ -17,6 +17,7 @@
   align-items: center;
   padding: 5px 30px;
   cursor: pointer;
+  color: #565656;
 }
 
 .desktopFirtsLevel__listContainer li:hover {

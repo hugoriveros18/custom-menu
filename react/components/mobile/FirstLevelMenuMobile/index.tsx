@@ -34,7 +34,7 @@ export default function FirstLevelMenuMobile() {
                 className={(menuState.firstLevelOrderId === (menu.order - 1) && menuState.secondLevelActive) ? handles.mobileFirtsLevel__categorieActive : undefined}
               >
                 <h4>{menu.name}</h4>
-                <img src="https://panamericana.vteximg.com.br/arquivos/right-arrow-menu.svg"/>
+                <img src="https://panamericana.vteximg.com.br/arquivos/right-arrow-update.svg"/>
               </li>
             )
           })

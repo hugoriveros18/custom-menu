@@ -1,7 +1,7 @@
 {
   "vendor": "panamericana",
   "name": "mega-menu-custom",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "title": "Custom Menu",
   "description": "Store custom menu with Mega Menu App integration",
   "builders": {
@@ -14,10 +14,8 @@
   "dependencies": {
     "vtex.styleguide": "9.x",
     "vtex.css-handles": "0.x",
-    "vtex.store-drawer": "0.x"
-  },
-  "peerDependencies": {
-    "vtex.mega-menu": "2.x"
+    "vtex.store-drawer": "0.x",
+    "vtex.mega-menu": "0.x"
   },
   "registries": [
     "smartcheckout"

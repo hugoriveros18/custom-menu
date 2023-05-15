@@ -49,7 +49,7 @@ export default function SecondLevelMenuMobile() {
             activateFirstLevelMenu();
           }}
         >
-          <img src="https://panamericana.vteximg.com.br/arquivos/left-arrow-menu.svg"/>
+          <img src="https://panamericana.vteximg.com.br/arquivos/left-arrow-update.svg"/>
           <p>Volver al menú principal</p>
         </div>
         <div className={handles.mobileSecondLevel__headerLinkContainer}>
@@ -81,7 +81,7 @@ export default function SecondLevelMenuMobile() {
                 }}
               >
                 <h4>{menu.name}</h4>
-                <img src="https://panamericana.vtexassets.com/arquivos/left-arrow-menu.svg"/>
+                <img src="https://panamericana.vtexassets.com/arquivos/right-arrow-update.svg"/>
               </div>
             )
           })
