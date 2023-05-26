@@ -31,6 +31,7 @@
 
 .desktopMenu__headerLogo {
   width: 300px;
+  cursor: pointer;
 }
 
 .drawer {

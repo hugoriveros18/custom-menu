@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCssHandles } from 'vtex.css-handles';
+import { useRuntime } from 'vtex.render-runtime';
 import { Drawer, DrawerHeader, DrawerCloseButton } from 'vtex.store-drawer';
 import { Link } from "vtex.render-runtime";
 import FirstLevelMenu from '../FirstLevelMenu/index';
@@ -27,6 +28,9 @@ export default function MainMenuDesktop() {
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 
+  //NAVIGATION
+  const { navigate } = useRuntime();
+
   //MENU STATE MANAGE
   const { menuState, deactivateSecondLevelMenu } = useRequestMenuDataDesktop();
 
@@ -47,6 +51,9 @@ export default function MainMenuDesktop() {
                 className={handles.desktopMenu__headerLogo}
                 src="https://panamericana.vtexassets.com/assets/vtex.file-manager-graphql/images/a51bbd12-c1bd-4663-96e7-da1be09bbd05___c42d5d021ea10e085384ca783acffc6c.svg"
                 alt="Logo Panamericana"
+                onClick={() => navigate({
+                  to: '/'
+                })}
               />
               <div className={handles.desktopMenu__closeButton}>
                 <DrawerCloseButton />

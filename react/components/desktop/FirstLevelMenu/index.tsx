@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { useCssHandles } from 'vtex.css-handles';
+import { useRuntime } from 'vtex.render-runtime';
 import { MenuContext } from "../../../context/MenuContext";
 import './styles.css';
 
@@ -13,6 +14,9 @@ export default function FirstLevelMenu() {
 
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
+
+  //NAVIGATION
+  const { navigate } = useRuntime();
 
   //STATE CONTEXT
   const {
@@ -38,6 +42,9 @@ export default function FirstLevelMenu() {
                   updateFirstLevelMenuOrderId(menu.order - 1)
                   updateFirstLevelId(menu.id);
                 }}
+                onClick={() => navigate({
+                  to: `${menu.slug}`
+                })}
                 className={(menuState.firstLevelOrderId === (menu.order - 1) && (menuState.firstLevelActive || menuState.secondLevelActive)) && handles.desktopFirtsLevel__categorieActive}
               >
                 <h4>{menu.name}</h4>
