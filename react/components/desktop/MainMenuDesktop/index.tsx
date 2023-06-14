@@ -63,7 +63,7 @@ export default function MainMenuDesktop() {
         }
         customIcon={
           <div className={handles.desktopMenu__trigger}>
-            <img src='https://panamericana.vteximg.com.br/arquivos/menu-custom-icon.svg'/>
+            <img src='https://panamericana.vteximg.com.br/arquivos/menu-custom-icon-white.svg'/>
             <p>MENÚ</p>
           </div>
         }

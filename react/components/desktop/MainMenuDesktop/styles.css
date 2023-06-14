@@ -10,8 +10,9 @@
 
 .desktopMenu__trigger p {
   margin     : 0;
+  font-size: 1.3rem;
   font-weight: 900;
-  color      : #565656;
+  color      : #fff;
 }
 
 .desktopMenu__headerContainer {
@@ -58,13 +59,13 @@
 }
 
 .drawerContent::-webkit-scrollbar {
-  width           : 5px;
-  background-color: #eee;
+  width           : 2px !important;
+  background-color: #eee !important;
 }
 
 .drawerContent::-webkit-scrollbar-thumb {
-  width           : 5px;
-  background-color: #000;
+  width           : 2px !important;
+  background-color: #565656 !important;
 }
 
 .desktopMenu__closeButton {
